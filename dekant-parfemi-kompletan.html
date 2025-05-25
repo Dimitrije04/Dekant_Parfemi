@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dekant Parfemi</title>
+  <style>
+    body { font-family: 'Georgia', serif; background: #f9f9f9; color: #222; margin: 0; }
+    header { background: #111; color: #fff; padding: 1rem 2rem; text-align: center; font-size: 2rem; }
+    main { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .filters { text-align: center; margin-bottom: 2rem; }
+    .filters button {
+      background: #b35c00; color: white; border: none;
+      padding: 0.6rem 1.5rem; margin: 0 0.5rem; font-size: 1rem;
+      border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease;
+    }
+    .filters button:hover, .filters button.active {
+      background: #f5d06f; color: #111;
+    }
+    section h2 { border-bottom: 2px solid #b35c00; padding-bottom: 0.3rem; margin-bottom: 1rem; }
+    .perfume-list { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .perfume {
+      background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 240px; padding: 1rem; text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .perfume:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .perfume img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; margin-bottom: 0.8rem; }
+    .perfume h3 { font-size: 1.2rem; margin: 0.5rem 0; }
+    .perfume p { font-style: italic; color: #555; margin-bottom: 0.5rem; }
+    .perfume .price { font-weight: bold; font-size: 1.1rem; color: #b35c00; }
+    .details { text-align: left; margin-top: 1rem; font-size: 0.95rem; }
+    .back-button {
+      display: inline-block; margin-top: 2rem; padding: 0.5rem 1rem;
+      background: #b35c00; color: white; border-radius: 20px; text-decoration: none;
+    }
+    footer {
+      background: #111; color: #fff; text-align: center; padding: 1.5rem 1rem;
+      margin-top: 3rem; font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Dekant Parfemi</header>
+  <main>
+    <div class="filters">
+      <button class="active" data-filter="all">Svi</button>
+      <button data-filter="muski">Muški</button>
+      <button data-filter="zenski">Ženski</button>
+    </div>
+
+    <section id="muski-section">
+      <h2>Muški parfemi</h2>
+      <div class="perfume-list">
+        
+    <a href="#dior-sauvage" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/61+uegNbt9L._AC_SY879_.jpg" alt="Dior Sauvage" />
+      <h3>Dior Sauvage</h3>
+      <p>Intenzivan miris svežine i drvenastih tonova.</p>
+      <div class="price">7.200 RSD</div>
+    </a>
+    
+    <a href="#bleu-chanel" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/51QxA6pNtoL._AC_SY879_.jpg" alt="Bleu de Chanel" />
+      <h3>Bleu de Chanel</h3>
+      <p>Osvežavajući i sofisticirani miris sa citrusnim i drvenastim notama.</p>
+      <div class="price">8.100 RSD</div>
+    </a>
+    
+    <a href="#acqua-di-gio" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SY879_.jpg" alt="Acqua di Giò" />
+      <h3>Acqua di Giò</h3>
+      <p>Lagani miris inspirisan morem i sunčanim danima.</p>
+      <div class="price">6.900 RSD</div>
+    </a>
+    
+    <a href="#y-le-parfum" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/61SRZzPmyJL._AC_SY879_.jpg" alt="Y Le Parfum" />
+      <h3>Y Le Parfum</h3>
+      <p>Intenzivan miris sa notama jabuke, kadulje i tonke.</p>
+      <div class="price">7.700 RSD</div>
+    </a>
+    
+    <a href="#1-million" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/51GeRFMQy1L._AC_SY879_.jpg" alt="1 Million" />
+      <h3>1 Million</h3>
+      <p>Topao i zavodljiv miris sa notama kože i začina.</p>
+      <div class="price">6.400 RSD</div>
+    </a>
+    
+    <a href="#spicebomb" class="perfume" data-type="muski">
+      <img src="https://m.media-amazon.com/images/I/61INvY8CBrL._AC_SY879_.jpg" alt="Spicebomb" />
+      <h3>Spicebomb</h3>
+      <p>Eksplozija začina i toplih nota duvana.</p>
+      <div class="price">6.800 RSD</div>
+    </a>
+    
+      </div>
+    </section>
+
+    <section id="zenski-section">
+      <h2>Ženski parfemi</h2>
+      <div class="perfume-list">
+        
+    <a href="#chanel-no5" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/41uOQk4LLML._AC_SY879_.jpg" alt="Chanel No.5" />
+      <h3>Chanel No.5</h3>
+      <p>Vrhunski klasik ženske elegancije.</p>
+      <div class="price">6.500 RSD</div>
+    </a>
+    
+    <a href="#la-vie-est-belle" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/61yfLKoG6kL._AC_SY879_.jpg" alt="La Vie Est Belle" />
+      <h3>La Vie Est Belle</h3>
+      <p>Sladak i ženstven miris sa notama vanile i irisa.</p>
+      <div class="price">6.900 RSD</div>
+    </a>
+    
+    <a href="#carolina-herrera" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/61np1MtC+1L._AC_SY879_.jpg" alt="Good Girl" />
+      <h3>Good Girl</h3>
+      <p>Elegantna kombinacija jasmina, tonke i kakaa.</p>
+      <div class="price">7.300 RSD</div>
+    </a>
+    
+    <a href="#miss-dior" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/61nSxo7U1lL._AC_SY879_.jpg" alt="Miss Dior" />
+      <h3>Miss Dior</h3>
+      <p>Romantični parfem sa notama ruže, bergamota i mošusa.</p>
+      <div class="price">6.600 RSD</div>
+    </a>
+    
+    <a href="#black-opium" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/61R+U7IpB6L._AC_SY879_.jpg" alt="Black Opium" />
+      <h3>Black Opium</h3>
+      <p>Zavodljiv i moderan parfem sa notama kafe i vanile.</p>
+      <div class="price">6.750 RSD</div>
+    </a>
+    
+    <a href="#versace-bright" class="perfume" data-type="zenski">
+      <img src="https://m.media-amazon.com/images/I/61IfvtwU+9L._AC_SY879_.jpg" alt="Versace Bright Crystal" />
+      <h3>Versace Bright Crystal</h3>
+      <p>Svež miris sa notama nara, lotosa i mošusa.</p>
+      <div class="price">6.300 RSD</div>
+    </a>
+    
+      </div>
+    </section>
+
+    
+    <section id="dior-sauvage">
+      <h2>Dior Sauvage</h2>
+      <img src="https://m.media-amazon.com/images/I/61+uegNbt9L._AC_SY879_.jpg" alt="Dior Sauvage" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Intenzivan miris svežine i drvenastih tonova.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 7.200 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="chanel-no5">
+      <h2>Chanel No.5</h2>
+      <img src="https://m.media-amazon.com/images/I/41uOQk4LLML._AC_SY879_.jpg" alt="Chanel No.5" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Vrhunski klasik ženske elegancije.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 6.500 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="bleu-chanel">
+      <h2>Bleu de Chanel</h2>
+      <img src="https://m.media-amazon.com/images/I/51QxA6pNtoL._AC_SY879_.jpg" alt="Bleu de Chanel" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Osvežavajući i sofisticirani miris sa citrusnim i drvenastim notama.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 8.100 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="acqua-di-gio">
+      <h2>Acqua di Giò</h2>
+      <img src="https://m.media-amazon.com/images/I/61EXU8BuGZL._AC_SY879_.jpg" alt="Acqua di Giò" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Lagani miris inspirisan morem i sunčanim danima.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 6.900 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="y-le-parfum">
+      <h2>Y Le Parfum</h2>
+      <img src="https://m.media-amazon.com/images/I/61SRZzPmyJL._AC_SY879_.jpg" alt="Y Le Parfum" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Intenzivan miris sa notama jabuke, kadulje i tonke.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 7.700 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="1-million">
+      <h2>1 Million</h2>
+      <img src="https://m.media-amazon.com/images/I/51GeRFMQy1L._AC_SY879_.jpg" alt="1 Million" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Topao i zavodljiv miris sa notama kože i začina.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 6.400 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="spicebomb">
+      <h2>Spicebomb</h2>
+      <img src="https://m.media-amazon.com/images/I/61INvY8CBrL._AC_SY879_.jpg" alt="Spicebomb" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Eksplozija začina i toplih nota duvana.</p>
+        <p><strong>Tip:</strong> Muški</p>
+        <p><strong>Cena:</strong> 6.800 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="la-vie-est-belle">
+      <h2>La Vie Est Belle</h2>
+      <img src="https://m.media-amazon.com/images/I/61yfLKoG6kL._AC_SY879_.jpg" alt="La Vie Est Belle" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Sladak i ženstven miris sa notama vanile i irisa.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 6.900 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="carolina-herrera">
+      <h2>Good Girl</h2>
+      <img src="https://m.media-amazon.com/images/I/61np1MtC+1L._AC_SY879_.jpg" alt="Good Girl" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Elegantna kombinacija jasmina, tonke i kakaa.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 7.300 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="miss-dior">
+      <h2>Miss Dior</h2>
+      <img src="https://m.media-amazon.com/images/I/61nSxo7U1lL._AC_SY879_.jpg" alt="Miss Dior" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Romantični parfem sa notama ruže, bergamota i mošusa.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 6.600 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="black-opium">
+      <h2>Black Opium</h2>
+      <img src="https://m.media-amazon.com/images/I/61R+U7IpB6L._AC_SY879_.jpg" alt="Black Opium" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Zavodljiv i moderan parfem sa notama kafe i vanile.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 6.750 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+    <section id="versace-bright">
+      <h2>Versace Bright Crystal</h2>
+      <img src="https://m.media-amazon.com/images/I/61IfvtwU+9L._AC_SY879_.jpg" alt="Versace Bright Crystal" style="width:300px;float:right;margin-left:2rem;">
+      <div class="details">
+        <p><strong>Opis:</strong> Svež miris sa notama nara, lotosa i mošusa.</p>
+        <p><strong>Tip:</strong> Ženski</p>
+        <p><strong>Cena:</strong> 6.300 RSD</p>
+      </div>
+      <a href="#" class="back-button">Nazad</a>
+    </section>
+    
+
+  </main>
+  <footer>
+    Kontakt: <a href="tel:+381612514754" style="color:#f5d06f; text-decoration:none;">061 251 4754</a>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filters button');
+    const muskiSection = document.getElementById('muski-section');
+    const zenskiSection = document.getElementById('zenski-section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        if(filter === 'all') {
+          muskiSection.style.display = 'block';
+          zenskiSection.style.display = 'block';
+        } else if(filter === 'muski') {
+          muskiSection.style.display = 'block';
+          zenskiSection.style.display = 'none';
+        } else if(filter === 'zenski') {
+          muskiSection.style.display = 'none';
+          zenskiSection.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
